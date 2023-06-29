@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "job-parser-4-course"
+version = "0.1.0"
+description = ""
+authors = ["anastasia_lykova <anastasia.7@mail.ru>"]
+readme = "README.md"
+packages = [{include = "job_parser_4_course"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
