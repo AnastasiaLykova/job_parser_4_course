@@ -3,9 +3,13 @@ def filter_vacancies(vacancies, filter_words):
     Функция получает список объектов класса Vacancy, возвращает
     отфильтрованный список, содержащий слова filter_words
     :param vacancies: список с объектами класса Vacancy
-    :param filter_words: список со словами для поиска
+    :param filter_words: список со словами для поиска,
+    если filter_words пустой - вернет полный список vacancies
     :return: список объектов, содержащих в описании хотя бы одно слово
     """
+    if not filter_words:
+        filtered_vacancies = vacancies
+        return filtered_vacancies
     filtered_vacancies = []
     for vacancy in vacancies:
         for word in filter_words:

@@ -65,7 +65,7 @@ class Vacancy:
                 else:
                     salary_max = i['salary']['to']
             if i['snippet']:
-                description = i['snippet']['requirement'][:170]
+                description = i['snippet']['requirement']
             else:
                 description = None
             vacancy = cls(name, url, salary_min, salary_max, description, "HH")
