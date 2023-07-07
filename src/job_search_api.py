@@ -30,8 +30,8 @@ class HeadHunterAPI(JobSearchAPI):
         """
         url = "https://api.hh.ru/vacancies"
         headers = {"User-Agent": "Anastasia Lykova"}
-        for item in range(0, page+1):
-            params = {"text": keyword, "area": 113, "page": page, "per_page": per_page}
+        for number in range(0, page+1):
+            params = {"text": keyword, "area": 113, "page": number, "per_page": per_page}
             response = requests.get(url, params=params, headers=headers)
             response = response.content.decode()
             json_hh = json.loads(response)
@@ -55,8 +55,8 @@ class SuperJobAPI(JobSearchAPI):
         api_key: str = os.getenv('API_KEY_SJ')
         headers = {"X-Api-App-Id": api_key}
         url = "https://api.superjob.ru/2.0/vacancies"
-        for item in range(0, page + 1):
-            params = {"keyword": keyword, "page": page, "count": per_page, "app_key": api_key}
+        for number in range(0, page + 1):
+            params = {"keyword": keyword, "page": number, "count": per_page, "app_key": api_key}
             response = requests.get(url, params=params, headers=headers)
             response = response.content.decode()
             json_sj = json.loads(response)
