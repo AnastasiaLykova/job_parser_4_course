@@ -41,7 +41,7 @@ class JSONSaver(FileSaver):
                             'website': vacancy_obj.website}
             self.vacancy_list.append(vacancy_dict)
         with open(self.path, "w", encoding="utf-8") as file:
-            json.dump(self.vacancy_list, file)
+            json.dump(self.vacancy_list, file, ensure_ascii=False, indent=4)
 
     def get_vacancies_by_salary(self, salary: int):
         """
